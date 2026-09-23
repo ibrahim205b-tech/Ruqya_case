@@ -1,0 +1,650 @@
+/* =========================================================
+   نظام التصميم: ملف حالة رقية لؤي كاظم إبراهيم
+   لوحة الألوان: أخضر مطفأ هادئ (ثقة/طبي) + أرضي دافئ (إنساني)
+   ========================================================= */
+
+:root {
+  --bg: #faf9f6;
+  --bg-alt: #f2efe9;
+  --surface: #ffffff;
+  --border: #e6e2d8;
+  --ink: #26302c;
+  --ink-soft: #5b655f;
+  --ink-faint: #8a9189;
+
+  --teal: #2f6f62;
+  --teal-dark: #1f4f45;
+  --teal-tint: #e7f0ed;
+
+  --clay: #a85a45;
+  --clay-tint: #f5e9e4;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(38, 48, 44, 0.04), 0 6px 20px rgba(38, 48, 44, 0.05);
+
+  --content-w: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Tajawal", "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Cairo", "Tajawal", sans-serif;
+  color: var(--ink);
+  line-height: 1.4;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--content-w);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+section {
+  padding: 56px 0;
+}
+
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.lede {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+/* -------------------- Skip link / accessibility -------------------- */
+.skip-link {
+  position: absolute;
+  right: -999px;
+  top: 0;
+  background: var(--teal-dark);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  z-index: 100;
+}
+.skip-link:focus {
+  right: 12px;
+  top: 12px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* -------------------- Hero -------------------- */
+.hero {
+  padding: 64px 0 48px;
+  background: linear-gradient(180deg, var(--teal-tint) 0%, var(--bg) 100%);
+  border-top: none;
+}
+
+.hero-eyebrow {
+  color: var(--teal-dark);
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero .meta {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+}
+
+.hero .meta span + span::before {
+  content: "•";
+  margin: 0 10px;
+  color: var(--ink-faint);
+}
+
+.hero p.statement {
+  font-size: 1.15rem;
+  color: var(--ink);
+  max-width: 58ch;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* -------------------- Buttons -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  font-family: "Tajawal", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  min-height: 50px;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-primary {
+  background: var(--teal-dark);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--teal);
+}
+.btn-outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--ink);
+}
+.btn-outline:hover {
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
+.btn-whatsapp {
+  background: #ffffff;
+  border-color: var(--border);
+  color: var(--ink);
+}
+.btn-whatsapp:hover {
+  border-color: #2f9e6f;
+  color: #1f7a54;
+}
+.btn-block {
+  width: 100%;
+}
+.btn-sm {
+  padding: 10px 16px;
+  min-height: 40px;
+  font-size: 0.92rem;
+}
+
+/* -------------------- Cards -------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.card + .card {
+  margin-top: 14px;
+}
+
+/* -------------------- Diagnosis -------------------- */
+.diagnosis-tag {
+  display: inline-block;
+  background: var(--teal-tint);
+  color: var(--teal-dark);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.measure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.measure-box {
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.measure-box .label {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.measure-box .value {
+  font-weight: 700;
+  font-size: 1.05rem;
+  direction: ltr;
+  display: inline-block;
+}
+
+.note-box {
+  border-right: 3px solid var(--teal);
+  padding: 12px 16px;
+  background: var(--teal-tint);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-size: 0.97rem;
+  margin-top: 16px;
+}
+
+.disclaimer {
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+  margin-top: 14px;
+}
+
+/* -------------------- Treatment steps -------------------- */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.steps .num {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--teal-dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* -------------------- Timeline -------------------- */
+.timeline {
+  position: relative;
+  padding-right: 24px;
+  border-right: 2px solid var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 26px;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 3px solid var(--teal-tint);
+}
+
+.timeline-date {
+  color: var(--teal-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline-desc {
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+
+.empty-note {
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+  padding: 16px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+}
+
+/* -------------------- Reports -------------------- */
+.report-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.report-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.report-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.report-icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--teal-tint);
+  color: var(--teal-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.report-name {
+  font-weight: 700;
+}
+
+.report-type {
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+
+.report-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* -------------------- Gallery -------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.gallery-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--bg-alt);
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 24, 22, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 24px;
+}
+.lightbox.open {
+  display: flex;
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: var(--radius-md);
+}
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* -------------------- Updates -------------------- */
+.update-card .update-date {
+  color: var(--teal-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+.update-card .update-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.update-card .update-text {
+  color: var(--ink-soft);
+}
+
+/* -------------------- Appeal -------------------- */
+.appeal-section {
+  background: var(--clay-tint);
+}
+.appeal-card {
+  border-color: #e3cdc2;
+}
+.appeal-meta {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.appeal-meta strong {
+  color: var(--ink);
+}
+
+/* -------------------- Mediator -------------------- */
+.mediator-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mediator-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.mediator-sub {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.verify-note {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+}
+
+/* -------------------- Donation -------------------- */
+.donation-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.donation-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  flex-wrap: wrap;
+}
+.donation-label {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+}
+.donation-value {
+  font-weight: 700;
+  font-size: 1.15rem;
+  direction: ltr;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--teal-dark);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 300;
+  box-shadow: var(--shadow);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* -------------------- Contact -------------------- */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wa-note {
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+.channel-icon {
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+/* -------------------- Share -------------------- */
+.share-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  padding: 36px 0 60px;
+  background: var(--bg-alt);
+}
+footer p {
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 44px 0;
+  }
+  .hero {
+    padding: 48px 0 36px;
+  }
+  .btn {
+    flex: 1 1 auto;
+  }
+  .measure-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
